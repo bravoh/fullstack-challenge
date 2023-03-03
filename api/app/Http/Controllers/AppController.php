@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -10,40 +11,47 @@ use Illuminate\Support\Facades\Http;
 
 class AppController extends Controller
 {
+    /**
+     * Landing page api
+     */
     public function index()
     {
+        return response()->json([
+            'message' => 'all systems are a go',
+            'users' => User::all(),
+        ]);
+    }
 
-        $minutes = 60;
-        $response =  Cache::remember('forecast', $minutes, function () {
-            $users = User::all();
-            Log::info("Not from cache");
+    /**
+     * @param User $user
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function show(User $user)
+    {
+        $cache_duration = 60;
+        $cache_key = $user->latitude." ".$user->longitude;
+        $api_key = env("TOMORROW_API_KEY");
 
-            $api_key = 'n6JCtZCCno4lxOpb0EFRdMGaBscglYml';
-            $lat = '40.75872069597532';
-            $long = '-73.98529171943665';
-        
-            //https://api.tomorrow.io/v4/weather/forecast?location=newyork&apikey=n6JCtZCCno4lxOpb0EFRdMGaBscglYml
-            $url = "https://api.tomorrow.io/v4/weather/forecast?location={$lat},{$long}&timesteps=1h&units=metric&apikey={$api_key}";
+        $url = "https://api.tomorrow.io/v4/weather/forecast?location={$user->latitude},{$user->longitude}&timesteps=1h&units=metric&apikey={$api_key}";
 
-            $client = new \GuzzleHttp\Client(['verify' => false]);
+        return Cache::remember('forecast_'.$cache_key, $cache_duration, function () use($user,$api_key,$url) {
+            
+            $client = new Client(['verify' => false]);
             $res = $client->get($url);
-        
-            $forecast = [];
 
+            $forecast = [];
             if ($res->getStatusCode() == 200) {
                 $j = $res->getBody();
                 $obj = json_decode($j);
                 $forecast = $obj;
             }
-        
-            $response = response()->json([
+
+            return response()->json([
                 'message' => 'all systems are a go',
-                'users' => \App\Models\User::all(),
+                'user' => $user,
+                'location' => $forecast
             ]);
-
-            return $response;
         });
-
-        return $response;
     }
 }

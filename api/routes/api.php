@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "App\Http\Controllers\AppController@index");
+Route::get('/user/{user}', "App\Http\Controllers\AppController@show");
