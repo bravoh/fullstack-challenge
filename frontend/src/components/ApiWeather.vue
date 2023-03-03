@@ -1,6 +1,6 @@
 <template>
   <div v-if="user">
-    <h2>{{ user.name }}</h2>
+    <p>{{ user.name }}</p>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
       ).json();
 
       this.user = response.user
-      this.location = response.location
+      this.weather = response.user.weather
     }
   }
 }

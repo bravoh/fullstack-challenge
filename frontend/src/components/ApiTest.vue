@@ -24,29 +24,23 @@ export default {
   <div v-if="!apiResponse">
     Pinging the api.
   </div>
-
   <div v-if="apiResponse">
     <div>
-      <div class="user-list">
-
-        <div class="user-item" v-for="user in apiResponse.users" v-bind:key="user.id">
-          <div class="user-name">
-              <router-link :to="`/user/${user.id}`">
+        <b-list-group v-for="user in apiResponse.users" v-bind:key="user.id">
+            <b-list-group-item :to="`/user/${user.id}`">
                 {{ user.name }}
-              </router-link>
-          </div>
-          <div class="user-data">
-            <!-- --->
-          </div>
-        </div>
-      </div>
 
-      <div class="clear-button">
-        User Details
-      </div>
+                 <div class="h2 mb-0">
+            <b-icon icon="exclamation-circle-fill" variant="success"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="warning"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="danger"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="info"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="primary"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="secondary"></b-icon>
+            <b-icon icon="exclamation-circle-fill" variant="dark"></b-icon>
+          </div>
+            </b-list-group-item>
+        </b-list-group>
     </div>
-
-
   </div>
-
 </template>
