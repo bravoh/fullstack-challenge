@@ -16,7 +16,7 @@ class UserWeather extends Model
      */
     protected $fillable = [
         'user_id',
-        'provider',
+        'provider_name',
         'payload',
     ];
 

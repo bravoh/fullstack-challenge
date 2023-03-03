@@ -196,6 +196,13 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     "to-fast-properties" "^2.0.0"
 
+"@dvuckovic/vue3-bootstrap-icons@^1.0.6":
+  "integrity" "sha512-UkVwD4wRmFPIgMV8u8L6tTyhYMaF0UWM9f+zYsTiR3O4N08QSgB9CUabffIcVc3X4acnRxr+ypLfRKQreme7BA=="
+  "resolved" "https://registry.npmjs.org/@dvuckovic/vue3-bootstrap-icons/-/vue3-bootstrap-icons-1.0.6.tgz"
+  "version" "1.0.6"
+  dependencies:
+    "bootstrap-icons" "^1.4.1"
+
 "@eslint/eslintrc@^1.3.3":
   "integrity" "sha512-uj3pT6Mg+3t39fvLrj8iuCIJ38zKO9FpGtJ4BBJebJhEwjoT+KLVNCcHT5QC9NGRIEi7fZ0ZR8YRb884auB4Lg=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.3.3.tgz"
@@ -803,6 +810,16 @@
   "integrity" "sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww=="
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
+
+"bootstrap-icons-vue@^1.8.1":
+  "integrity" "sha512-uItRULwQz0epETi9x/RBEqfjHmTAmkIIczpH1R6L9T6yyaaijk0826PzTWnWNm15tw66JT/8GNuXjB0HI5PHLw=="
+  "resolved" "https://registry.npmjs.org/bootstrap-icons-vue/-/bootstrap-icons-vue-1.8.1.tgz"
+  "version" "1.8.1"
+
+"bootstrap-icons@^1.4.1":
+  "integrity" "sha512-7Qvj0j0idEm/DdX9Q0CpxAnJYqBCFCiUI6qzSPYfERMcokVuV9Mdm/AJiVZI8+Gawe4h/l6zFcOzvV7oXCZArw=="
+  "resolved" "https://registry.npmjs.org/bootstrap-icons/-/bootstrap-icons-1.10.3.tgz"
+  "version" "1.10.3"
 
 "bootstrap-vue-3@^0.5.1":
   "integrity" "sha512-azgy+97Ih+TJvI1vJnqt4mptQ8Wvm3P8eKDvL9ZMGBWN/9k2ikU4Wx1OM0KNOZDcC4kyaWmC08n9cbaaShrkJg=="
@@ -2877,7 +2894,7 @@
     "@vue/compiler-sfc" "2.7.14"
     "csstype" "^3.1.0"
 
-"vue@^2.6.14 || ^3.2.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.45", "vue@^3.2.47", "vue@3.2.47":
+"vue@^2.6.14 || ^3.2.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.9", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.45", "vue@^3.2.47", "vue@3.2.47":
   "integrity" "sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.47.tgz"
   "version" "3.2.47"

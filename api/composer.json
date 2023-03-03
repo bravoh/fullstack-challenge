@@ -9,6 +9,7 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.0",
         "laravel/tinker": "^2.7",
+        "predis/predis": "^2.1",
         "rakibdevs/openweather-laravel-api": "^1.9"
     },
     "require-dev": {

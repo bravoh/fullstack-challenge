@@ -37,20 +37,20 @@ class AppController extends Controller
 
         return Cache::remember('forecast_'.$cache_key, $cache_duration, function () use($user,$api_key,$url) {
             
-            $client = new Client(['verify' => false]);
-            $res = $client->get($url);
+            //$client = new Client(['verify' => false]);
+            //$res = $client->get($url);
 
-            $forecast = [];
-            if ($res->getStatusCode() == 200) {
-                $j = $res->getBody();
-                $obj = json_decode($j);
-                $forecast = $obj;
-            }
+            //$forecast = [];
+            //if ($res->getStatusCode() == 200) {
+                //$j = $res->getBody();
+                //$obj = json_decode($j);
+                //$forecast = $obj;
+            //}
 
             return response()->json([
                 'message' => 'all systems are a go',
                 'user' => $user,
-                'location' => $forecast
+                //'forecast' => forecast
             ]);
         });
     }
