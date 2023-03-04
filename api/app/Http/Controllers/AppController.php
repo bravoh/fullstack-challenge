@@ -18,7 +18,7 @@ class AppController extends Controller
     {
         return response()->json([
             'message' => 'all systems are a go',
-            'users' => User::all(),
+            'users' => User::with('weather')->get(),
         ]);
     }
 
@@ -50,7 +50,7 @@ class AppController extends Controller
             return response()->json([
                 'message' => 'all systems are a go',
                 'user' => $user,
-                //'forecast' => forecast
+                'weather' => $user->weather
             ]);
         });
     }

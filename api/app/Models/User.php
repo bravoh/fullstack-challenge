@@ -43,4 +43,8 @@ class User extends Authenticatable
     public function weather(){
         return $this->hasOne(UserWeather::class);
     }
+
+    public function get_report(){
+        return json_decode($this->weather->payload);
+    }
 }
