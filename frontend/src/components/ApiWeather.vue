@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     async getUser() {
-      const url = `http://localhost:8000/user/${this.userId}`
+      const url = `http://3.76.53.189/user/${this.userId}`
       let response = await (
           await fetch(url)
       ).json();

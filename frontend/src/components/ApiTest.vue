@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     async fetchData() {
-      const url = 'http://localhost:8000/'
+      const url = 'http://3.76.53.189/'
       this.apiResponse = await (
           await fetch(url)
       ).json();
