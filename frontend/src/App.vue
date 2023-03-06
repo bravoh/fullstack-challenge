@@ -1,10 +1,9 @@
-
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-    <b-container>
+  <b-container>
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="#">Weather App</b-navbar-brand>
@@ -20,13 +19,10 @@ import { RouterLink, RouterView } from "vue-router";
     </div>
 
     <div>
-        <br/>
-        <RouterView />      
+      <br />
+      <RouterView />
     </div>
-    </b-container>
-
+  </b-container>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

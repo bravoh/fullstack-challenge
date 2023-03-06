@@ -9,6 +9,6 @@ import ApiWeather from "@/components/ApiWeather.vue";
 
 export default {
   name: "WeatherView",
-  components: {ApiWeather},
-}
+  components: { ApiWeather },
+};
 </script>
